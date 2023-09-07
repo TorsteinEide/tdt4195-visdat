@@ -8,6 +8,7 @@
 #![allow(unused_variables)]
 */
 extern crate nalgebra_glm as glm;
+use std::ptr::addr_of_mut;
 use std::{ mem, ptr, os::raw::c_void };
 use std::thread;
 use std::sync::{Mutex, Arc, RwLock};
@@ -51,23 +52,49 @@ fn offset<T>(n: u32) -> *const c_void {
 // Get a null pointer (equivalent to an offset of 0)
 // ptr::null()
 
-
 // == // Generate your VAO here
 unsafe fn create_vao(vertices: &Vec<f32>, indices: &Vec<u32>) -> u32 {
-    // Implement me!
 
-    // Also, feel free to delete comments :)
+    // Implement me!
 
     // This should:
     // * Generate a VAO and bind it
+    let mut vao_id:u32 = 0;
+    gl::GenVertexArrays(1, addr_of_mut!(vao_id));
+    gl::BindVertexArray(vao_id);
     // * Generate a VBO and bind it
+    let mut vbo_id:u32 = 0;
+    gl::GenBuffers(1, addr_of_mut!(vbo_id));
+    gl::BindBuffer(gl::ARRAY_BUFFER, vbo_id);
     // * Fill it with data
+    gl::BufferData(
+        gl::ARRAY_BUFFER, 
+        byte_size_of_array(vertices), 
+        pointer_to_array(vertices),
+        gl::STATIC_DRAW);
     // * Configure a VAP for the data and enable it
+    gl::VertexAttribPointer(
+        0, 
+        3, 
+        gl::FLOAT, 
+        gl::FALSE, 
+        0, 
+        ptr::null());
+    
+    gl::EnableVertexAttribArray(0);
     // * Generate a IBO and bind it
+    let mut ibo_id:u32 = 0;
+    gl::GenBuffers(1, addr_of_mut!(ibo_id));
+    gl::BindBuffer(gl::ELEMENT_ARRAY_BUFFER, ibo_id);
     // * Fill it with data
-    // * Return the ID of the VAO
+    gl::BufferData(
+        gl::ELEMENT_ARRAY_BUFFER, 
+        byte_size_of_array(indices), 
+        pointer_to_array(indices), 
+        gl::STATIC_DRAW);
 
-    0
+    // * Return the ID of the VAO
+    vao_id
 }
 
 
@@ -131,27 +158,90 @@ fn main() {
         }
 
         // == // Set up your VAO around here
+        
+        let first_task = { 
+            let vertices: Vec<f32> = [
+                // First triangle
+                [0.6, -0.6, 0.0], 
+                [-0.6, -0.6, 0.0], 
+                [0.0, 0.6, 0.0],
 
-        let my_vao = unsafe { 1337 };
+                // Second triangle
+                [0.8, 0.2, 0.0], 
+                [0.2, 0.2, 0.0], 
+                [0.5, 0.8, 0.0],
 
+                // Third triangle
+                [-0.4, 0.4, 0.0], 
+                [-0.8, 0.4, 0.0], 
+                [-0.6, 0.8, 0.0],
+
+                // Fourth triangle
+                [-0.8, -0.2, 0.0], 
+                [-0.5, -0.2, 0.0], 
+                [-0.65, -0.5, 0.0],
+
+                // Fifth triangle
+                [0.6, -0.4, 0.0], 
+                [1.0, -0.4, 0.0], 
+                [0.8, -0.8, 0.0],
+            ]
+            .iter()
+            .copied()
+            .flatten()
+            .collect();
+
+            let indices: Vec<u32> = vec![
+                2,1,0, // Indices for the first triangle
+                5, 4, 3, // Indices for the second triangle
+                8, 7, 6, // Indices for the third triangle
+                11, 10, 9, // Indices for the fourth triangle
+                14, 13, 12, // Indices for the fifth triangle
+            ];
+            
+            unsafe { create_vao(&vertices, &indices) } 
+        };
+
+        // let second_task = {
+        //     let vertices: Vec<f32> = [
+        //         [0.6, -0.8,  -1.2], 
+        //         [0.0,  0.4,   0.0], 
+        //         [-0.8, -0.2,  1.2],
+        //         // Enable vertices below for 2b
+        //         // [0.3, -0.4,  0.0], 
+        //         // [0.0,  0.2,  0.0], 
+        //         // [-0.4, -0.1, 0.0],
+        //     ]
+        //     .iter()
+        //     .copied()
+        //     .flatten()
+        //     .collect();
+
+        //     let indices: Vec<u32> = vec![
+        //         0,1,2, // Changed this to 0,2,1 for 2b
+        //         // 3,4,5 //Enabled this code for 2b
+        //     ];
+            
+        //     unsafe { create_vao(&vertices, &indices) } 
+        // };
+        
 
         // == // Set up your shaders here
-
         // Basic usage of shader helper:
         // The example code below creates a 'shader' object.
         // It which contains the field `.program_id` and the method `.activate()`.
         // The `.` in the path is relative to `Cargo.toml`.
         // This snippet is not enough to do the exercise, and will need to be modified (outside
         // of just using the correct path), but it only needs to be called once
-
-        /*
+        
         let simple_shader = unsafe {
             shader::ShaderBuilder::new()
-                .attach_file("./path/to/simple/shader.file")
+                .attach_file("shaders/simple.vert")
+                // Change the fragment shader to checkers.frag to display the checkered graphics
+                .attach_file("shaders/simple.frag")
                 .link()
         };
-        */
-
+        unsafe { simple_shader.activate() };
 
         // Used to demonstrate keyboard handling for exercise 2.
         let mut _arbitrary_number = 0.0; // feel free to remove
@@ -215,10 +305,15 @@ fn main() {
                 gl::ClearColor(0.035, 0.046, 0.078, 1.0); // night sky, full opacity
                 gl::Clear(gl::COLOR_BUFFER_BIT | gl::DEPTH_BUFFER_BIT);
 
-
+                
+                
                 // == // Issue the necessary gl:: commands to draw your scene here
 
-
+                gl::DrawElements(
+                gl::TRIANGLES, 
+                15, 
+                gl::UNSIGNED_INT, 
+                ptr::null());
 
             }
 
