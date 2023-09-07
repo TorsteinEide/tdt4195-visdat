@@ -1,10 +1,12 @@
 # Assignment 1
 ## 1 c)
 five distinct triangles:
+
 ![Five triangles](images/1c.png)
 
 ## 2 a)
 Screenshot of the result:
+
 ![clipbox triangle](images/2a.png)
 ### I)
 The name of this phenomenon is clipping and happens whenever a portion of a model is outside of a specified region of space
@@ -16,6 +18,7 @@ Its purpose is to discard all geometry that is outside of the clipbox. Another p
 ## 2 b)
 
 ![index buffer triangles](images/2b.png)
+
 ### I) 
 Here i have defined two triangles, the one visible in the screenshot and another one not visible as it disappears.
 ### II)
@@ -45,11 +48,14 @@ A situation where we would pass a non-zero value into this section is whenever w
 
 ## d)
 image flipped both vertically and horizontally. I achieved this by multiplying a transformation matrix to the positional vector
+
 ![flipped image](images/d-flip.png)
 
 To change the color of the image i modified the fragment shader, as the color was defined by rgba values ranging from 1.0-0.0 i changed green and blue values to zero leaving only the red color. 
+
 ![colored image](images/d-color.png)
 
 ## 3
 I managed to create the checkered pattern
+
 ![checkered image](images/checkered.png)
