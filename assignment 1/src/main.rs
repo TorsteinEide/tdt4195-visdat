@@ -238,7 +238,7 @@ fn main() {
             shader::ShaderBuilder::new()
                 .attach_file("shaders/simple.vert")
                 // Change the fragment shader to checkers.frag to display the checkered graphics
-                .attach_file("shaders/simple.frag")
+                .attach_file("shaders/checkers.frag")
                 .link()
         };
         unsafe { simple_shader.activate() };
