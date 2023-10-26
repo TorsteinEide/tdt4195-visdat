@@ -33,4 +33,9 @@ Hyperparameters are predetermined variables that define how the neural network i
 ### C) Why is the softmax activation functioned used in the last layer for neyral networks trained to classify objects
 The softmax activation function is used in the last layer because of its ability to normalize data into probability that can be used to predict the outputs
 ### D)
+## TASK 4
+### A) image of normalized graph
+![normalized graph](images/normalized-graph.png)
+
+when training my network with normalized values i see that the final test loss is slightly less, as well as the accuracy of the final test is slightly more accurate. in terms of visually i can see that the train loss no longer follows the same trend as the the train loss for the normalized images, as it converges faster.
 
