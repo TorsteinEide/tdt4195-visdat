@@ -39,3 +39,8 @@ The softmax activation function is used in the last layer because of its ability
 
 when training my network with normalized values i see that the final test loss is slightly less, as well as the accuracy of the final test is slightly more accurate. in terms of visually i can see that the train loss no longer follows the same trend as the the train loss for the normalized images, as it converges faster.
 
+### B) image of all digits and their weights in a 28x28 graph
+![weights](images/digit-weights.png)
+
+In this picture you can see the weights of each of the digits, each weight represents key characteristics for a digit. Overall these weights show what the model has learned are important features for each of the digits.
+
