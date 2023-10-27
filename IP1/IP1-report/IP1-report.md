@@ -43,4 +43,11 @@ when training my network with normalized values i see that the final test loss i
 ![weights](images/digit-weights.png)
 
 In this picture you can see the weights of each of the digits, each weight represents key characteristics for a digit. Overall these weights show what the model has learned are important features for each of the digits.
+### C) Changing learning rate to 1
+![lr=1](images/new-lr.png)
 
+Here you can see that the loss is very high (3.411). This can be because the learning rate is too high. This can cause the optimization process to overshoot the optimal weights, making it difficult to converge, and leading to more poor accuracy. 
+### D) Adding a hidden layer to the model
+![plot from a and plot from d](images/plot-a-and-d.png)
+
+From this plot you can see that the model with hidden layer converges a little slower, this can be because of the increased complexity. Although it converges slower, the model will move towards a lower loss value (0.209).
