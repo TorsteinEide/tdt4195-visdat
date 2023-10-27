@@ -24,6 +24,7 @@ Image of greyscale duck after inverse transformation has been applied
 ![inverse duck](images/inverse-duck.png)
 ### C)
 Image of smoothened and sobel duck
+
 ![convoluted duck](images/convoluted-duck.png)
 ## Task 3 - theory
 ### A) A single-layer neural network is a linear function, Which of these binary operation(s) can **not** be represented by a single-layer neural network (AND, OR, NOT, NOR, NAND, or XOR).
@@ -32,7 +33,13 @@ Image of smoothened and sobel duck
 Hyperparameters are predetermined variables that define how the neural network is structured and trained.
 ### C) Why is the softmax activation functioned used in the last layer for neyral networks trained to classify objects
 The softmax activation function is used in the last layer because of its ability to normalize data into probability that can be used to predict the outputs
-### D)
+### D) forward pass
+![forward pass](images/forward-pass.png)
+
+i think i managed to do the forward pass, but i was not able to figure out how to do the backwards pass
+
+
+
 ## TASK 4
 ### A) image of normalized graph
 ![normalized graph](images/normalized-graph.png)
