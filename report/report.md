@@ -44,3 +44,50 @@ The feature maps in the second layer has the spatial domain of 251x251.
 TODO: Get back to this
 ```
 ## Task 2: Programming
+### B)
+![task 2 b](/images/task2b.png)
+
+### C)
+![task 2 c](/images/task2c.png)
+
+### D)
+Filters and their detection
+
+* First filter (leftmost in the previous image) detect edges in a vertical direction
+* Second fitler detects edges in a diagonal direction, by this i mean edges from top left of the image to down right. 
+* Third filter seems to detect transitions between different level of intensity
+* The fourth filter detects lightly skewed horizontal lines
+* The fifth filter seems to detect the same as the third filter, but negative colors (the same of three, but opposite colors). The filters look very similar, but with different colors which leads me to believe that they detect the same but for opposite polarity. This can also be seen from the activation image, they look the same but opposite. 
+
+## Task 3: Theory
+### A) Given the images in the spatial and frequency domain, pair each image in the spatial domain with a single image in teh frequency domain. Explain your reasoning
+
+* 1a &rarr; 2f
+* 1b &rarr; 2c
+* 1c &rarr; 2e
+* 1d &rarr; 2d
+* 1e &rarr; 2b
+* 1f &rarr; 2a
+
+The patterns in each of the spatial domain images are repeating, and because there are two colors, we would find "peaks" and the distance between these peaks will correspond to the frequency of the pattern. So in this case i chose these connections due to their frequency and the direction of the peaks. 
+
+### B) What are high-pass and low-pass filters?
+High-pass filters is a filter that allows high-frequency components of an image to pass through while ignoring the lower-frequencies. High-frequency components correspond to sharp edges and details of an image.
+
+Here is an example of an original image passed through a high-pass filter:
+
+![high-pass filter](/images/high-pass.png)
+
+
+The low-pass filters do the opposite of a high-pass filter, this means that the low-pass filter allows low-frequency components to pass through while ignoring the higher-frequencies. These low frequencies often correspond to smooth edges and details.
+
+Here is an example of the same original image passed through a low-pass filter:
+
+![low-pass filter](/images/low-pass.png)
+
+source of images: https://demonstrations.wolfram.com/LowPassAndHighPassFilteringOfImages/
+
+### C) For each kernel, figure out what kind of kernel it is (high- or low-pass). Shortly explain your reasoning.
+I think that the first kernel (a) is low-pass as you can clearly see there are smoothed parts of the image, this is something the high-pass would ignore. This means that the second kernel (b) is high-pass, this also supports my claim due to there being no smoothed parts of the image.
+
+## Task 4: Programming
