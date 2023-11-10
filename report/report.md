@@ -40,9 +40,8 @@ The feature maps in the second layer has the spatial domain of 251x251.
 
 ### E) How many parameters are there in the network? In this network, the number of parameters is the number of weights + the number of biases. Assume the network takes in an 32x32 image.
 
-```
-TODO: Get back to this
-```
+
+
 ## Task 2: Programming
 ### B)
 ![task 2 b](/images/task2b.png)
@@ -91,6 +90,16 @@ source of images: https://demonstrations.wolfram.com/LowPassAndHighPassFiltering
 I think that the first kernel (a) is low-pass as you can clearly see there are smoothed parts of the image, this is something the high-pass would ignore. This means that the second kernel (b) is high-pass, this also supports my claim due to there being no smoothed parts of the image.
 
 ## Task 4: Programming
+### A)
 ![task 4 a](/images/task4a.png)
 
 A "ringing" effect is visible on the first image (low-pass). This effect is a phenomenon that can be seen near sharp edges, it can be caused by distortion or loss of frequency information, or can be caused by passing through a low-pass filter.
+
+### B)
+![task 4 b](/images/task4b.png)
+
+### C)
+![task 4 c](/images/task4c.png)
+
+### D)
+![task 4 d](/images/task4d.png)
