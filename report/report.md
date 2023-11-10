@@ -91,3 +91,6 @@ source of images: https://demonstrations.wolfram.com/LowPassAndHighPassFiltering
 I think that the first kernel (a) is low-pass as you can clearly see there are smoothed parts of the image, this is something the high-pass would ignore. This means that the second kernel (b) is high-pass, this also supports my claim due to there being no smoothed parts of the image.
 
 ## Task 4: Programming
+![task 4 a](/images/task4a.png)
+
+A "ringing" effect is visible on the first image (low-pass). This effect is a phenomenon that can be seen near sharp edges, it can be caused by distortion or loss of frequency information, or can be caused by passing through a low-pass filter.
