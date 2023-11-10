@@ -44,10 +44,10 @@ The feature maps in the second layer has the spatial domain of 251x251.
 s
 ## Task 2: Programming
 ### B)
-![task 2 b](/images/task2b.png)
+![task 2 b](images/task2b.png)
 
 ### C)
-![task 2 c](/images/task2c.png)
+![task 2 c](images/task2c.png)
 
 ### D)
 Filters and their detection
@@ -75,14 +75,14 @@ High-pass filters is a filter that allows high-frequency components of an image 
 
 Here is an example of an original image passed through a high-pass filter:
 
-![high-pass filter](/images/high-pass.png)
+![high-pass filter](images/high-pass.png)
 
 
 The low-pass filters do the opposite of a high-pass filter, this means that the low-pass filter allows low-frequency components to pass through while ignoring the higher-frequencies. These low frequencies often correspond to smooth edges and details.
 
 Here is an example of the same original image passed through a low-pass filter:
 
-![low-pass filter](/images/low-pass.png)
+![low-pass filter](images/low-pass.png)
 
 source of images: https://demonstrations.wolfram.com/LowPassAndHighPassFilteringOfImages/
 
@@ -91,15 +91,15 @@ I think that the first kernel (a) is low-pass as you can clearly see there are s
 
 ## Task 4: Programming
 ### A)
-![task 4 a](/images/task4a.png)
+![task 4 a](images/task4a.png)
 
 A "ringing" effect is visible on the first image (low-pass). This effect is a phenomenon that can be seen near sharp edges, it can be caused by distortion or loss of frequency information, or can be caused by passing through a low-pass filter.
 
 ### B)
-![task 4 b](/images/task4b.png)
+![task 4 b](images/task4b.png)
 
 ### C)
-![task 4 c](/images/task4c.png)
+![task 4 c](images/task4c.png)
 
 ### D)
-![task 4 d](/images/task4d.png)
+![task 4 d](images/task4d.png)
