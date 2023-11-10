@@ -41,7 +41,7 @@ The feature maps in the second layer has the spatial domain of 251x251.
 ### E) How many parameters are there in the network? In this network, the number of parameters is the number of weights + the number of biases. Assume the network takes in an 32x32 image.
 
 
-
+s
 ## Task 2: Programming
 ### B)
 ![task 2 b](/images/task2b.png)
@@ -61,14 +61,14 @@ Filters and their detection
 ## Task 3: Theory
 ### A) Given the images in the spatial and frequency domain, pair each image in the spatial domain with a single image in teh frequency domain. Explain your reasoning
 
-* 1a &rarr; 2f
+* 1a &rarr; 2e
 * 1b &rarr; 2c
-* 1c &rarr; 2e
-* 1d &rarr; 2d
-* 1e &rarr; 2b
+* 1c &rarr; 2f
+* 1d &rarr; 2b
+* 1e &rarr; 2d
 * 1f &rarr; 2a
 
-The patterns in each of the spatial domain images are repeating, and because there are two colors, we would find "peaks" and the distance between these peaks will correspond to the frequency of the pattern. So in this case i chose these connections due to their frequency and the direction of the peaks. 
+The patterns in each of the spatial domain images are repeating, and because there are two colors, we would find "peaks" and the distance between these peaks will correspond to the frequency of the pattern. So in this case i chose these connections due to their frequency and the direction of the peaks.
 
 ### B) What are high-pass and low-pass filters?
 High-pass filters is a filter that allows high-frequency components of an image to pass through while ignoring the lower-frequencies. High-frequency components correspond to sharp edges and details of an image.
