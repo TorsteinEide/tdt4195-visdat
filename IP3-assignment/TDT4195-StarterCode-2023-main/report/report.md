@@ -15,3 +15,6 @@ Hysteresis threshold is a method for reducing sensitivity to noise and produce m
 
 ### D) Why do we use hysteresis thresholding instead of single threshold?
 Hysteresis is used instead of single due to its ability to be more versatile. It provides a more nuanced way to indentify edges by incorperating both high and low-thresholds, enabling noise reduction which makes for a more robust edge detection.
+
+### E) Determine dilation
+![Task 1 e](images/task1e.png)
