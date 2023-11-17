@@ -41,7 +41,7 @@ The feature maps in the second layer has the spatial domain of 251x251.
 ### E) How many parameters are there in the network? In this network, the number of parameters is the number of weights + the number of biases. Assume the network takes in an 32x32 image.
 
 
-s
+
 ## Task 2: Programming
 ### B)
 ![task 2 b](images/task2b.png)
@@ -87,7 +87,7 @@ Here is an example of the same original image passed through a low-pass filter:
 source of images: https://demonstrations.wolfram.com/LowPassAndHighPassFilteringOfImages/
 
 ### C) For each kernel, figure out what kind of kernel it is (high- or low-pass). Shortly explain your reasoning.
-I think that the first kernel (a) is low-pass as you can clearly see there are smoothed parts of the image, this is something the high-pass would ignore. This means that the second kernel (b) is high-pass, this also supports my claim due to there being no smoothed parts of the image.
+I think the first kernel (a) is high-pass as it would exclude the low-frequency signals in the frequency domain, this would result in an image with hard edges. This means that the second image (b) is low-pass, as it would exclude the high-frequency signals and keep the high-frequency signals so that we will be left with the smoothed parts of the origianl image. 
 
 ## Task 4: Programming
 ### A)
