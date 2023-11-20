@@ -18,3 +18,28 @@ Hysteresis is used instead of single due to its ability to be more versatile. It
 
 ### E) Determine dilation
 ![Task 1 e](images/task1e.png)
+
+
+## Task 2: Segmentation
+
+### A)
+![task 2 a](images/task2a.png)
+
+### B)
+![task 2 b](images/task2b.png)
+
+## Task 3: Morphology
+
+### A) Result from task 3 a
+![Task 3 a](images/task3a.png)
+
+I removed the noise here by first applying an opening function to remove the outlying noise around the triangle. i then applied closing to close the gaps within the triangle
+
+### B) Result from task 3 b
+![Task 3 b](images/task3b.png)
+
+### C) Result from task 3 c
+![Task 3 c](images/task3c.png)
+
+### D) Result from task 3 d
+![Task 3 d](images/task3d.png)
